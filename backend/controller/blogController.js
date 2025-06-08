@@ -1,7 +1,6 @@
 import Blog from "../models/Blog.js";
 import getImageKit from "../config/imageKit.js";
 import Comment from "../models/Comment.js";
-import fs from "fs";
 import { generateContent } from "../config/gemini.js";
 
 export const addBlog = async (req, res) => {
@@ -33,9 +32,9 @@ export const addBlog = async (req, res) => {
         //upload image to imagekit
         const imageKit = getImageKit();
 
-        const fileBuffer = fs.readFileSync(imageFile.path);
+        // Use buffer from memory storage instead of reading from file
         const response = await imageKit.upload({
-            file: fileBuffer,
+            file: imageFile.buffer,
             fileName: imageFile.originalname,
             folder: "/blogs"
         });
@@ -55,15 +54,8 @@ export const addBlog = async (req, res) => {
         //upload to mongoDB
         await Blog.create({ title, subTitle, description, category, image, isPublished });
 
-        // Clean up uploaded file
-        fs.unlinkSync(imageFile.path);
-
         res.status(201).json({ success: true, message: "Blog created successfully" });
     } catch (error) {
-        // Clean up uploaded file if it exists
-        if (req.file && fs.existsSync(req.file.path)) {
-            fs.unlinkSync(req.file.path);
-        }
         res.status(500).json({ success: false, message: error.message });
     }
 }

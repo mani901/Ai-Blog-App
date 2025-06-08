@@ -50,7 +50,6 @@ ai-blog-app/
 │   ├── middleware/          # Authentication & file upload
 │   ├── models/              # MongoDB schemas
 │   ├── routes/              # API routes
-│   ├── uploads/             # Temporary file storage
 │   ├── package.json
 │   └── README.md
 └── README.md                # This file
