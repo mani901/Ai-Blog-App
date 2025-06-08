@@ -22,6 +22,11 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));  // Apply the CORS configuration
 
+
+app.get("/", (req, res) => {
+    res.send("Api is working");
+});
+
 // Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/blog", blogRoutes);
