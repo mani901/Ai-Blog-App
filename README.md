@@ -227,11 +227,4 @@ VITE_API_URL=http://localhost:3000
 - Check individual README files for detailed setup
 - Review common troubleshooting steps above
 
-## 🔗 Links
-
-
-- **Design System**: Built with Tailwind CSS
-
----
-
 **Built using React, Node.js** 
