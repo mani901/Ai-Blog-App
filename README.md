@@ -306,7 +306,7 @@ VITE_API_URL=http://localhost:3000
 
 ## 🔗 Links
 
-- **Live Demo**: [Add your demo URL]
+- **Live Demo**: https://ai-blog-app-two.vercel.app/
 - **Design System**: Built with Tailwind CSS
 
 ---
