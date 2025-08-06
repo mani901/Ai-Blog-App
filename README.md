@@ -1,6 +1,7 @@
 # AI Blog App
 
 A full-stack AI-powered blog application with content generation capabilities, admin dashboard, and modern responsive design.
+- **Live Demo**: https://ai-blog-app-two.vercel.app/
 
 ## 🚀 Features
 
@@ -117,42 +118,6 @@ npm run dev     # Development
 npm run build   # Production build
 ```
 
-## 🔌 API Endpoints
-
-### Blog Routes (`/api/blog`)
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| POST | `/add` | Create blog post | ✅ |
-| GET | `/all` | Get all published blogs | ❌ |
-| GET | `/:blogId` | Get blog by ID | ❌ |
-| DELETE | `/:blogId` | Delete blog post | ✅ |
-| PUT | `/:blogId/toggle-publish` | Toggle publish status | ✅ |
-| POST | `/generate-content` | Generate AI content | ❌ |
-| POST | `/add-comment` | Add comment | ❌ |
-| POST | `/comments` | Get approved comments | ❌ |
-
-### Admin Routes (`/api/admin`)
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| POST | `/login` | Admin login | ❌ |
-| GET | `/blogs` | Get all blogs (admin) | ✅ |
-| GET | `/comments` | Get all comments (admin) | ✅ |
-| GET | `/dashboard` | Get dashboard stats | ✅ |
-| DELETE | `/delete-comment` | Delete comment | ✅ |
-| PUT | `/approve-comment` | Approve comment | ✅ |
-
-## 🎯 Key Pages
-
-### Public Pages
-- **Home** (`/`) - Blog listings with categories
-- **Blog** (`/blog/:id`) - Individual blog post with comments
-
-### Admin Dashboard (`/admin`)
-- **Dashboard** - Analytics and overview
-- **Add Blog** - Create blogs with AI assistance
-- **Manage Blogs** - Edit/delete existing blogs
-- **Comments** - Moderate user comments
-
 ## 🚀 Deployment
 
 ### Backend Deployment
@@ -200,34 +165,6 @@ npm run preview # Preview build
 npm run lint    # Run linter
 ```
 
-## 🐛 Common Issues
-
-### Backend Issues
-1. **Gemini API Key Error**
-   - Ensure API key is correctly set in `.env`
-   - Check API key permissions
-
-2. **ImageKit Upload Fails**
-   - Verify ImageKit credentials
-   - Check file size limits
-
-3. **MongoDB Connection Error**
-   - Verify MongoDB URI
-   - Check network connectivity
-
-### Frontend Issues
-1. **API Connection Error**
-   - Ensure backend is running on port 3000
-   - Check VITE_API_URL in `.env`
-
-2. **Build Fails**
-   - Delete `node_modules` and reinstall
-   - Check for dependency conflicts
-
-3. **Authentication Issues**
-   - Clear browser localStorage
-   - Verify admin credentials
-
 ## 📝 Environment Variables
 
 ### Backend (.env)
@@ -248,21 +185,7 @@ GEMINI_API_KEY=your_gemini_key
 VITE_API_URL=http://localhost:3000
 ```
 
-## 🏗️ Architecture
 
-```
-┌─────────────┐    HTTP/REST    ┌─────────────┐
-│   React     │ ──────────────► │   Node.js   │
-│   Frontend  │                 │   Backend   │
-└─────────────┘                 └─────────────┘
-       │                               │
-       │                               │
-   ┌─────────┐                  ┌─────────────┐
-   │ Vite +  │                  │  MongoDB +  │
-   │Tailwind │                  │  ImageKit + │
-   └─────────┘                  │  Gemini AI  │
-                                └─────────────┘
-```
 
 ## 🎨 Features Overview
 
@@ -306,9 +229,9 @@ VITE_API_URL=http://localhost:3000
 
 ## 🔗 Links
 
-- **Live Demo**: https://ai-blog-app-two.vercel.app/
+
 - **Design System**: Built with Tailwind CSS
 
 ---
 
-**Built with ❤️ using React, Node.js** 
+**Built using React, Node.js** 
