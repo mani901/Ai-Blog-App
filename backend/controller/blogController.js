@@ -2,6 +2,7 @@ import Blog from "../models/Blog.js";
 import getImageKit from "../config/imageKit.js";
 import Comment from "../models/Comment.js";
 import { generateContent } from "../config/gemini.js";
+import connectDB from "../config/db.js";
 
 export const addBlog = async (req, res) => {
     try {
@@ -62,6 +63,7 @@ export const addBlog = async (req, res) => {
 
 export const getAllBlogs = async (req, res) => {
     try {
+        await connectDB();
         const blogs = await Blog.find({ isPublished: true });
         res.status(200).json({ success: true, blogs });
     } catch (error) {
